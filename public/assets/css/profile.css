@@ -3,13 +3,15 @@
 	margin : 10px;
 	width : 200px;
 	border : solid 1px #b8860b;
+	border-color : #eebb00;
 }
 #profile h1 {
 	padding : 5px;
 	padding-left : 30px;
-	color : #DDD;
+	color : #222;
 	font-weight : bold;
 	background : #b8860b;
+	background-color : #eebb00;
 }
 
 #profile .avator
