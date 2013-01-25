@@ -2,16 +2,16 @@
 {
 	margin : 10px;
 	width : 200px;
-	border : solid 1px #b8860b;
-	border-color : #eebb00;
+        border : solid 1px #344151;
+	border-color : #a3aaae;
 }
 #profile h1 {
 	padding : 5px;
-	padding-left : 30px;
 	color : #222;
+        text-align : center;
 	font-weight : bold;
-	background : #b8860b;
-	background-color : #eebb00;
+	background : #343b4b;
+	background-color : #a3aaae;
 }
 
 #profile .avator
