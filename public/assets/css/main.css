@@ -11,7 +11,7 @@ body{
  * ---------------------------------*/
 #header_background {
 	background-image : url('../img/common/header_bg.jpg');
-	height : 500px;
+	height : 350px;
 	width : 100%;
 	position : fixed;
 	top : 0px;
