@@ -3,3 +3,173 @@ p.text {
 	text-indent: 1em;
 	line-height : 1.5em;
 }
+/* ---------------------------------
+ * WebFont
+ * ---------------------------------*/
+@font-face 
+{
+		font-family:cinecaption;
+		src: local('cinecaption'), url(../fonts/cinecaption226.ttf) format('truetype');
+}
+/* ---------------------------------
+ * 基本のデザイン
+ * ---------------------------------*/
+body
+{
+		background-color : #333; 
+		color : #444;
+		font-family:cinecaption;
+		/* background-image : url('../img/common/mascot.png') */
+}
+/*--------------------------------------------------------------------
+ * 基本的なデザイン
+ * --------------------------------------------------------------------*/
+a,
+a:link {
+		color: #333333;
+		text-decoration: none;
+}
+
+a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #777777;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+/*
+ * 背景作成
+ * ---------------------------------*/
+body
+{
+		background-color : #333; 
+}
+/* ---------------------------------
+ * ロゴデザイン
+ * ---------------------------------*/
+#logo 
+{
+		font-family:"cinecaption";
+		font-size : 40px;
+		letter-spacing : 20px;
+		font-weight : bold;
+		text-shadow: -1px -1px #DDD, 1px -1px #DDD, -1px 1px #DDD, 1px 1px #DDD;
+}
+/* ---------------------------------
+ * ヘッダー
+ * ---------------------------------*/
+header {
+		background-image : url('../img/common/header_bg.jpg');
+		width : 100%;
+		height : 350px;
+}
+header h1 {
+	text-align : center;
+	padding-top : 32px;
+	padding-left : 31px;
+}
+#mascot {
+	position : absolute;
+	width : 100%;
+	left : 0px;
+	top : 32px;
+	margin : auto;
+	text-align : center;
+}
+#mascot img{
+	padding-right : 970px;
+}
+
+/* ---------------------------------
+ * コンテンツ表示域
+ * ---------------------------------*/
+
+/* メイン角丸ボックス ---------------------------------*/
+#contents {
+	width : 950px;
+	moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	background : #DDD;
+	margin : auto;
+	margin-top : -250px;
+	border : solid 2px #344151;
+	position : relative;
+}
+
+/*
+ * Footer
+ * ---------------------------------*/
+footer {
+	width : 850px;
+	moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	background : #EEE;
+	margin : auto;
+	border : solid 2px #344151;
+	padding : 20px 50px;
+	text-align : center;
+	font-family : 'cinecaption';
+	margin-top : 5px;
+	margin-bottom : 70px;
+	/*background : #a3aaae;*/
+	background : #a3aaae;
+}
+
+/* ---------------------------------
+ * 広告表示
+ * ---------------------------------*/
+figure#adv {
+	width : 120px;
+	position : absolute;
+	top : 2px;
+	right : 2px;
+	padding : 0px;
+	margin : 0px;
+}
+figure#adv figcaption{
+	background : #DDD;
+	color : #000;
+	padding : 10px 0px;
+	text-align : center;
+}
+
+
+/* ---------------------------------
+ * カラム設定
+ * ---------------------------------*/
+
+/* カラムルートボックス ------------------------------ */
+#col-box {
+	width : 810px;
+	padding-top : 20px;
+	padding-bottom : 50px;
+}
+#col1{
+	float : right;
+	margin-right : 20px;
+	width : 540px;
+}
+#col2{
+	float : left;
+	margin-left : 20px;
+	width : 210px;
+}
+/* ---------------------------------
+ * プロフィール
+ * ---------------------------------*/
+.avator
+{
+	background: url(../img/common/self_image.jpg) no-repeat;
+	background-size : 100%;
+	height : 150px;
+}
