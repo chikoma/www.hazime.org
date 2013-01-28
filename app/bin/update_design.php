@@ -24,9 +24,15 @@ $i = 0;
 $files[$i]['file']                = 'index.html';
 $files[$i]['blocks']['contents']  = 'index.html';
 $files[$i]['blocks']['header']    = 'header.html';
-$files[$i]['blocks']['aside']     = 'profile.html';
+$files[$i]['blocks']['aside']     = 'top-profile.html';
 $files[$i]['blocks']['aside_adv'] = 'adv.html';
 $files[$i]['blocks']['footer']    = 'footer.html';
+$files[$i]['replace'] = array(
+	array('/\{\$(.*)\}/','<?php echo $this->getVal("\1"); ?>'),
+);
+$i++;
+$files[$i]['file']                = 'profile.html';
+$files[$i]['blocks']['contents']  = 'profile.html';
 $files[$i]['replace'] = array(
 	array('/\{\$(.*)\}/','<?php echo $this->getVal("\1"); ?>'),
 );

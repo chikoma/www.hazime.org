@@ -78,6 +78,16 @@ class Hazime_Resource_Website
 		eval( '?>'.file_get_contents($file) );
 	}
 
+	public function design( $file, $out )
+	{
+		ob_start();
+		$this->build($file);
+		$c = ob_get_contents();
+		ob_end_clean();
+
+		file_put_contents( $this->_website->designDir.'/'.$out, $c);
+	}
+
 	public function getVal( $name )
 	{
 		return isset($this->_vars[$name]) ?
