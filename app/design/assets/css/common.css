@@ -20,9 +20,7 @@ body
 		color : #444;
 		font-family:cinecaption;
 		/* background-image : url('../img/common/mascot.png') */
-	background-image : url(../img/common/header_bg.png), url(../img/bg/kasuriblack.png);
-	background-position : 0px 45px, 0px;
-	background-repeat : repeat-x, repeat;
+	background-image : url(../img/bg/kasuriblack.png);
 }
 /*--------------------------------------------------------------------
  * 基本的なデザイン
@@ -71,7 +69,7 @@ body
  * ---------------------------------*/
 header {
 		width : 950px;
-		height : 100px;
+		height : 70px;
 		background : #DDD;
 		moz-border-radius:0px 0px 10px 10px;
 		-webkit-border-radius:0px 0px 10px 10px;
@@ -84,6 +82,12 @@ header {
 		background : url(../img/bg/white.png);
 
 }
+#headerbg{
+	width : 100%;
+	height : 300px;
+	position : absolute;
+	background : url(../img/common/header_bg.png);
+}
 hgroup {
 	width : 950px;
 	margin : auto;
@@ -91,7 +95,7 @@ hgroup {
 }
 header h1 {
 	text-align : center;
-	padding-top : 25px;
+	padding-top : 15px;
 	padding-left : 31px;
 }
 #mascot {
@@ -105,7 +109,7 @@ header h1 {
 /* ---------------------------------
  *コンテンツ表示域
  * ---------------------------------*/
-menu {
+#menu {
 	width : 910px;
 	height : 60px;
 	margin : 0px auto 0px auto;
