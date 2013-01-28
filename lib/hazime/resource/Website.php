@@ -7,6 +7,11 @@ function layout( $name )
 	$website->dispLayout($name);
 	echo "<!-- END:BLOCK $name //-->\n";
 }
+function getVal( $name )
+{
+	global $website;
+	return $website->getVal($name);
+}
 class Hazime_Resource_Website
 {
 	use Logging;
@@ -113,6 +118,8 @@ class Hazime_Resource_Website
 			}
 		}
 		fclose($fp);
+
+		$layout = preg_replace('/\{\{(.+)\}\}/','<?php echo getVal("\1"); ?>', $layout);
 		file_put_contents( $out = $this->_html_dir."/layout/".$name, $layout );
 		$this->log(Hazime_Log::INFO, 'write layout into '.$out);
 	}
@@ -142,5 +149,12 @@ class Hazime_Resource_Website
 			copy($s,$d);
 		}
 	}
+
+	public function getVal( $name )
+	{
+		//return "<!-- START:GETVAL $name -->ダミー$name<!-- END:GETVAL $name//-->";
+		return "ダミー";
+	}
+
 }
 ?>

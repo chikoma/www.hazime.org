@@ -13,7 +13,7 @@ echo "Updating Design\n\n";
 
 // Update Design
 $bs->website( )->parseLayout('index.html','main.html');
-$bs->website( )->parseParts('index.html','main.html');
+$bs->website( )->parseParts('index.html');
 $bs->website( )->copyAssets( );
 
 echo "\n\n\n";
