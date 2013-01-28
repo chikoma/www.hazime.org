@@ -29,7 +29,4 @@ $website->build('main.html');
 // パーツを解析する
 // ------------------------
 //$website->parseParts("index.html");
-
-
-
 ?>

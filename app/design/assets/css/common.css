@@ -68,7 +68,11 @@ body
  * ヘッダー
  * ---------------------------------*/
 header {
+<<<<<<< HEAD
 		background-image : url('../img/common/unryuu.png');
+=======
+		background-image : url('../img/common/header_bg.png');
+>>>>>>> 54e09b49534a79725b15fb92ffccdc8c9083648e
 		width : 100%;
 		height : 350px;
 		position : absolute;
