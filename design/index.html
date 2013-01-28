@@ -26,23 +26,21 @@
 		</style>
 	</head>
 	<body class="layout3col">
-		<div id="wrapper">
-			<div id="wrap-top">
-				<!-- === HEADER ==== -->
-				<header>
-					<hgroup>
-					<img src="assets/img/common/mascot.png" id="mascot"/>
-					<h1 id="logo">::SITE_TITLE::松本ハジメと「かむながら」</h1>
-					</hgroup>
-				</header>
-				<!-- === Contents ==== -->
-				<div id="contents">
-		<figure id="adv">
-			<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=kurari04-22&o=9&p=6&l=ur1&category=kindlebooks&banner=02BCQQNBZZS752RPY702&f=ifr" width="120" height="150" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" border="1"></iframe>
-			<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=_blank&IS2=1&bg1=_blank&fc1=000000&lc1=0000FF&t=kurari04-22&o=9&p=8&l=as1&m=amazon&f=ifr&ref=qf_sp_asin_til&asins=B00B4HVH4G" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-		</figure>
-					<div id="col-box" class="clearfix">
-						<div id="col1">
+		<!-- START:BLOCK header //-->
+<!-- START:INFILE parts/header.html //-->
+<header>
+	<hgroup>
+	<img src="assets/img/common/mascot.png" id="mascot"/>
+	<h1 id="logo">松本ハジメと「かむながら」</h1>
+	</hgroup>
+</header>
+<!-- END:INFILE parts/header.html //-->
+<!-- END:BLOCK header //-->
+		<div id="contents">
+			<div id="col-box" class="clearfix">
+				<div id="col1">
+					<!-- START:BLOCK contents //-->
+<!-- START:INFILE parts/contents.html //-->
 							<article>
 						<h2 class="first">ニュース</h2>
 						<section>
@@ -85,56 +83,72 @@
 						</article>
 					</div><!-- /col1 //-->
 					<div id="col2">
-						<section class="avator"></section>
-						<section class="name">松本創（まつもと はじめ）</section>
-						<hr />
-						<section class="intro">
-						<p class="text">
-						1983年生まれ、経営者/役者/物書き/プログラマ/SEなどと、
-						肩書きが多岐に渡り定まらないが、全ては関係する一連の
-						ながれで、強いて肩書きを言えば名前こそが肩書きになる
-						ように生きている。
-						</p>
-						<hr />
-						<p class="text">
-						小学校５年生より不登校となり、
-						ヒッチハイクで日本を旅し、
-						無人島、アイヌの村などの生活を経て、
-						表現活動として演劇をはじめる。
-						演劇をはじめてからはっちゃけて、
-						大学で非常勤講師をやるわ、
-						中国雲南省の山岳少数民族の村で暮らすわ
-						して零細IT企業を設立。
-						大手企業のITをやるうちにナンダカンダで、
-						イギリス、ヨーロピアンデベロッピングバンクに、
-						ITアドバイザとして登録される。
-						それが縁でモンゴルへ渡り、IT企業を作ったり、
-						消費者金融を作ったり、バス会社を作ったり、
-						している内に役者の修行がしたくなり、
-						奈良橋陽子率いるUPSアカデミーに入学。
-						</p>
-						<hr />
-						<p class="text">
-						真剣10代しゃべり場１期レギュラー/
-						山田洋次監督映画「学校Ⅳ 15才」原案
-						園子温監督映画「自殺サークル」/
-						チャンネル北野「21世紀を牽引するアーティスト達/
-						舞台「両A面」/
-						mammo.TV 「あんたいまどこ」連載/
-						別冊JUNON「JUNON BOY'S」企画連載/
-						河出書房新社「しょうがねぇじゃん俺生きてるし」執筆/
-						NHK出版「しゃべり場の人達」共著
-						</p>
-						</section>
-						</article>
-					</div><!-- /col2 //-->
-					</div><!-- /col-box //-->
-				</div><!-- /contents //-->
-			</div><!-- /wrap-top //-->
-		</div><!-- /wrapper //-->
-
-		<!-- === Footer ==== -->
+<!-- END:INFILE parts/contents.html //-->
+<!-- END:BLOCK contents //-->
+				</div><!-- /col1 //-->
+				<div id="col2">
+					<!-- START:BLOCK aside_adv //-->
+<!-- START:INFILE parts/adv.html //-->
+		<figure id="adv">
+			<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=kurari04-22&o=9&p=6&l=ur1&category=kindlebooks&banner=02BCQQNBZZS752RPY702&f=ifr" width="120" height="150" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" border="1"></iframe>
+			<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=_blank&IS2=1&bg1=_blank&fc1=000000&lc1=0000FF&t=kurari04-22&o=9&p=8&l=as1&m=amazon&f=ifr&ref=qf_sp_asin_til&asins=B00B4HVH4G" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+		</figure>
+<!-- END:INFILE parts/adv.html //-->
+<!-- END:BLOCK aside_adv //-->
+					<!-- START:BLOCK aside //-->
+<!-- START:INFILE parts/profile.html //-->
+<section class="avator"></section>
+<section class="name">松本創（まつもと はじめ）</section>
+<hr />
+<section class="intro">
+<p class="text">
+1983年生まれ、経営者/役者/物書き/プログラマ/SEなどと、
+肩書きが多岐に渡り定まらないが、全ては関係する一連の
+ながれで、強いて肩書きを言えば名前こそが肩書きになる
+ように生きている。
+</p>
+<hr />
+<p class="text">
+小学校５年生より不登校となり、
+ヒッチハイクで日本を旅し、
+無人島、アイヌの村などの生活を経て、
+表現活動として演劇をはじめる。
+演劇をはじめてからはっちゃけて、
+大学で非常勤講師をやるわ、
+中国雲南省の山岳少数民族の村で暮らすわ
+して零細IT企業を設立。
+大手企業のITをやるうちにナンダカンダで、
+イギリス、ヨーロピアンデベロッピングバンクに、
+ITアドバイザとして登録される。
+それが縁でモンゴルへ渡り、IT企業を作ったり、
+消費者金融を作ったり、バス会社を作ったり、
+している内に役者の修行がしたくなり、
+奈良橋陽子率いるUPSアカデミーに入学。
+</p>
+<hr />
+<p class="text">
+真剣10代しゃべり場１期レギュラー/
+山田洋次監督映画「学校Ⅳ 15才」原案
+園子温監督映画「自殺サークル」/
+チャンネル北野「21世紀を牽引するアーティスト達/
+舞台「両A面」/
+mammo.TV 「あんたいまどこ」連載/
+別冊JUNON「JUNON BOY'S」企画連載/
+河出書房新社「しょうがねぇじゃん俺生きてるし」執筆/
+NHK出版「しゃべり場の人達」共著
+</p>
+</section>
+</article>
+<!-- END:INFILE parts/profile.html //-->
+<!-- END:BLOCK aside //-->
+				</div><!-- /col2 //-->
+			</div><!-- /col-box //-->
+		</div><!-- /contents //-->
+		<!-- START:BLOCK footer //-->
+<!-- START:INFILE parts/footer.html //-->
 		<footer>&copy; 2013 Hajime MATSUMOTO All rights reserved</footer>
+<!-- END:INFILE parts/footer.html //-->
+<!-- END:BLOCK footer //-->
 
 		<!-- Google Analytics //-->
 		<script type="text/javascript">

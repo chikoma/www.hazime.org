@@ -1,1 +1,3 @@
 .DS_Store
+html/parts/*.html
+html/layout/*.html
