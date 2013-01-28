@@ -53,6 +53,18 @@ class Hazime_Bootstrap
 			$name = substr( $name, 3 );
 			return $this->getResource( $name, $args );
 		}
+		else
+		{
+			if(isset($this->_running[strtolower($name)]))
+			{
+				return $this->_running[strtolower($name)];
+			}
+			if(method_exists( $this,$method="init".$name ) ){
+				return $this->_running[strtolower($name)] = call_user_func(array($this,$method));
+			}else{
+				return $this->_running[strtolower($name)] = $this->getResource($name);
+			}
+		}
 		throw new RuntimeException("Undefined Method $name");
 	}
 }

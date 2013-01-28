@@ -35,7 +35,7 @@ class Hazime_Log
 	public function log( $level,$msg )
 	{
 		$time = date('Y-m-d H:i:s');
-		printf('[%s] [%s] %s<br />',$time,$level,$msg);
+		printf('[%s] [%s] %s<br />'."\n",$time,$level,$msg);
 	}
 }
 ?>

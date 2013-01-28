@@ -1,5 +1,15 @@
 <?php
 #
+# Include Pathを追加
+#======================
+ini_set(
+	'include_path',
+	ini_get('include_path')
+	.':'
+	.$dir = realpath(dirname(__FILE__)."/../") 
+);
+define('HAZIME_LIB',$dir);
+#
 # Hazime Class Core
 #================
 require_once 'trait/Singleton.php';

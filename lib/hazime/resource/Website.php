@@ -14,6 +14,22 @@ class Hazime_Resource_Website
 	private $_layout_resource = array();
 	private $_html_dir = ".";
 	private $_design_dir = ".";
+
+
+	public function setHtmlDir( $dir )
+	{
+		$this->_html_dir = $dir;
+	}
+
+	public function setDesignDir( $dir )
+	{
+		$this->_design_dir = $dir;
+	}
+	public function setPublicDir( $dir )
+	{
+		$this->_public_dir = $dir;
+	}
+
 	public function load( $html )
 	{
 		echo file_get_contents($html);
@@ -46,16 +62,6 @@ class Hazime_Resource_Website
 		$website = $this;
 		$file = $this->_html_dir .'/layout/'.$file;
 		eval( '?>'.file_get_contents($file) );
-	}
-
-	public function setHtmlDir( $dir )
-	{
-		$this->_html_dir = $dir;
-	}
-
-	public function setDesignDir( $dir )
-	{
-		$this->_design_dir = $dir;
 	}
 
 	public function design( $layout, $file )
@@ -105,7 +111,7 @@ class Hazime_Resource_Website
 			if( preg_match('/<!--\sSTART:BLOCK\s([^\s]+)\s[\/]*-->/', $line, $w) ){
 				array_push($block, $w[1]);
 			}elseif( preg_match('/<!--\sEND:BLOCK\s([^\s]+)\s[\/]*-->/', $line, $w) ){
-				$layout.='<?php layout('.$w[1].');?>'."\n";
+				$layout.='<?php layout("'.$w[1].'");?>'."\n";
 				array_pop($block);
 			}elseif( empty($block) ){
 				$layout.= $line;
@@ -114,6 +120,32 @@ class Hazime_Resource_Website
 		fclose($fp);
 		file_put_contents( $out = $this->_html_dir."/layout/".$name, $layout );
 		$this->log(Hazime_Log::INFO, 'write layout into '.$out);
+	}
+
+	public function copyAssets( )
+	{
+		$this->copyDirectory($this->_design_dir ."/assets", $this->_public_dir."/assets");
+	}
+
+	private function copyDirectory( $s, $d)
+	{
+		if( is_dir( $s ) ){
+			@mkdir( $d );
+			$dir = dir($s);
+			while( $read = $dir->read() ){
+				if( $read == "." || $read == ".." ){
+					continue;
+				}
+				$path = $s.'/'.$read;
+				if( is_dir($path) ){
+					$this->copyDirectory( $path, $d."/".$read );
+					continue;
+				}
+				copy($path, $d."/".$read);
+			}
+		}else{
+			copy($s,$d);
+		}
 	}
 }
 ?>
