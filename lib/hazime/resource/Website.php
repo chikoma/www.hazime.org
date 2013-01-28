@@ -1,4 +1,6 @@
 <?php
+require_once 'class/Website/Website.php';
+
 function layout( $name )
 {
 	global $website;
@@ -19,20 +21,35 @@ class Hazime_Resource_Website
 	private $_layout_resource = array();
 	private $_html_dir = ".";
 	private $_design_dir = ".";
+	private $_public_dir = ".";
+	private $_website;
 
+	public function __construct( )
+	{
+		$this->_website = new Hazime_Website();
+	}
+
+	public function importLayout($rule)
+	{
+		$this->_website->importLayout( $rule );
+	}
+
+	public function importContents($rule)
+	{
+		$this->_website->importContents( $rule );
+	}
 
 	public function setHtmlDir( $dir )
 	{
-		$this->_html_dir = $dir;
+		$this->_website->htmlDir = $dir;
 	}
-
 	public function setDesignDir( $dir )
 	{
-		$this->_design_dir = $dir;
+		$this->_website->designDir = $dir;
 	}
 	public function setPublicDir( $dir )
 	{
-		$this->_public_dir = $dir;
+		$this->_website->publicDir = $dir;
 	}
 
 	public function addLayout( $name, $resource, $type="file" )
