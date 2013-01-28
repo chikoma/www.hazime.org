@@ -78,13 +78,11 @@ header {
 /* まちこヘッダー実験中 ---------------------------------*/
 		width : 950px;
 		height : 100px;
-		moz-border-radius:10px;
-		-webkit-border-radius:10px;
-		border-radius:10px;
 		background : #DDD;
 		margin : auto;
-		margin-top : 10px;
-		border : solid 2px #344151;
+		margin-top : 0px;
+		border : solid  #344151;
+		border-width : 0px 2px 0px 2px;
 		position : relative;
 		background : url(../img/bg/white.png);
 
@@ -96,7 +94,7 @@ hgroup {
 }
 header h1 {
 	text-align : center;
-	padding-top : 32px;
+	padding-top : 25px;
 	padding-left : 31px;
 }
 #mascot {
@@ -111,16 +109,14 @@ header h1 {
  * コンテンツ表示域
  * ---------------------------------*/
 
-/* メイン角丸ボックス ---------------------------------*/
+/* メインボックス ---------------------------------*/
 #contents {
 	width : 950px;
-	moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border-radius:10px;
 	background : #DDD;
 	margin : auto;
-	margin-top : 10px;
-	border : solid 2px #344151;
+	margin-top : 0px;
+	border : solid #344151;
+	border-width : 0px 2px 0px 2px;
 	position : relative;
 	background : url(../img/bg/white.png);
 }
@@ -130,20 +126,18 @@ header h1 {
  * ---------------------------------*/
 footer {
 	width : 850px;
-	moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border-radius:10px;
 	background : #EEE;
 	margin : auto;
-	border : solid 2px #344151;
+	border : solid #344151;
+	border-width : 0px 2px 0px 2px;
 	padding : 20px 50px;
 	text-align : center;
 	font-family : 'cinecaption';
-	margin-top : 5px;
-	margin-bottom : 70px;
+	margin-top : 0px;
+	margin-bottom : 0px;
 	/*background : #a3aaae;*/
 	background : #a3aaae;
-	background : url(../img/bg/gray.png)
+	background : url(../img/bg/white.png)
 }
 
 /* ---------------------------------
