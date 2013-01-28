@@ -22,7 +22,6 @@ echo "Updating Design\n\n";
 //
 $i = 0;
 $files[$i]['file']                = 'index.html';
-$files[$i]['layout']              = 'main.html';
 $files[$i]['blocks']['contents']  = 'index.html';
 $files[$i]['blocks']['header']    = 'header.html';
 $files[$i]['blocks']['aside']     = 'profile.html';
@@ -40,7 +39,6 @@ $layouts[$i]['replace'] = array(
 	array('/\{\$(.*)\}/','<?php echo $this->getVal("\1"); ?>'),
 );
 $i++;
-
 
 $bs->website()->importLayout( $layouts );
 $bs->website()->importContents( $files );

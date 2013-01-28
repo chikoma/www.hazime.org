@@ -9,11 +9,12 @@ $website = $bs->website();
 
 // HTMLをビルドする
 // ------------------------
+$website->setVar('SUBTITLE','トップ');
 $website->addLayout('header','header.html');
 $website->addLayout('footer','footer.html');
 $website->addLayout('aside','profile.html');
 $website->addLayout('aside_adv','adv.html');
-$website->addLayout('contents','contents.html');
+$website->addLayout('contents','index.html');
 $website->build('main.html');
 
 // デザイナー用に出力

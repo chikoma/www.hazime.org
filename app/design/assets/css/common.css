@@ -20,7 +20,9 @@ body
 		color : #444;
 		font-family:cinecaption;
 		/* background-image : url('../img/common/mascot.png') */
-	  background : url(../img/bg/kasuriblack.png)
+	background-image : url(../img/common/header_bg.png), url(../img/bg/kasuriblack.png);
+	background-position : 0px 45px, 0px;
+	background-repeat : repeat-x, repeat;
 }
 /*--------------------------------------------------------------------
  * 基本的なデザイン
@@ -67,22 +69,17 @@ body
 /* ---------------------------------
  * ヘッダー
  * ---------------------------------*/
-headerbg {
-		background-image : url('../img/common/unryuu.png');
-		width : 100%;
-		height : 300px;
-		position : absolute;
-		top : 0px;
-}
 header {
-/* まちこヘッダー実験中 ---------------------------------*/
 		width : 950px;
 		height : 100px;
 		background : #DDD;
+		moz-border-radius:0px 0px 10px 10px;
+		-webkit-border-radius:0px 0px 10px 10px;
+		border-radius:0px 0px 10px 10px;
 		margin : auto;
 		margin-top : 0px;
 		border : solid  #344151;
-		border-width : 0px 2px 0px 2px;
+		border-width : 0px 2px 2px 2px;
 		position : relative;
 		background : url(../img/bg/white.png);
 
@@ -106,17 +103,31 @@ header h1 {
 }
 
 /* ---------------------------------
+ *コンテンツ表示域
+ * ---------------------------------*/
+menu {
+	width : 910px;
+	height : 60px;
+	margin : 0px auto 0px auto;
+	border : 0px ;
+	position : relative;
+}
+
+/* ---------------------------------
  * コンテンツ表示域
  * ---------------------------------*/
 
-/* メインボックス ---------------------------------*/
+/* メイン角丸ボックス ---------------------------------*/
 #contents {
 	width : 950px;
+	moz-border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	border-radius:10px 10px 0px 0px;
 	background : #DDD;
 	margin : auto;
 	margin-top : 0px;
 	border : solid #344151;
-	border-width : 0px 2px 0px 2px;
+	border-width : 2px 2px 0px 2px;
 	position : relative;
 	background : url(../img/bg/white.png);
 }
