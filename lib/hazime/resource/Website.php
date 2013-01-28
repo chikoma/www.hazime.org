@@ -30,11 +30,6 @@ class Hazime_Resource_Website
 		$this->_public_dir = $dir;
 	}
 
-	public function load( $html )
-	{
-		echo file_get_contents($html);
-	}
-
 	public function addLayout( $name, $resource, $type="file" )
 	{
 		$this->_layout_resource[$name] = array($type,$resource);
