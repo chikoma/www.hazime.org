@@ -29,12 +29,14 @@ $files[$i]['blocks']['aside_adv'] = 'adv.html';
 $files[$i]['blocks']['footer']    = 'footer.html';
 $files[$i]['replace'] = array(
 	array('/\{\$(.*)\}/','<?php echo $this->getVal("\1"); ?>'),
+	array('/profile.html/','profile.php'),
 );
 $i++;
 $files[$i]['file']                = 'profile.html';
 $files[$i]['blocks']['contents']  = 'profile.html';
 $files[$i]['replace'] = array(
 	array('/\{\$(.*)\}/','<?php echo $this->getVal("\1"); ?>'),
+	array('/profile.html/','profile.php'),
 );
 $i++;
 
@@ -43,6 +45,7 @@ $layouts[$i]['file'] = 'index.html';
 $layouts[$i]['name'] = 'main.html';
 $layouts[$i]['replace'] = array(
 	array('/\{\$(.*)\}/','<?php echo $this->getVal("\1"); ?>'),
+	array('/profile.html/','profile.php'),
 );
 $i++;
 
