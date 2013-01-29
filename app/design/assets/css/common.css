@@ -71,7 +71,7 @@ header {
 		width : 100%;
 		height : 350px;
 		position : absolute;
-		background : url(../img/common/header_bg.png);
+		background : url(../img/common/header_washi.png);
 		top : 0px;
 }
 hgroup {
@@ -86,8 +86,8 @@ header h1 {
 }
 #mascot {
 	position : absolute;
-	left : -35px;
-	top : 0px;
+	left : -10px;
+	top : 5px;
 }
 #mascot img{
 }
