@@ -20,10 +20,13 @@ trait Proxy
 
 	public function __call( $name, $args )
 	{
+		return call_user_func_array(array($this->_proxy_for, $name), $args);
+		/*
 		if( method_exists($this->_proxy_for, $name) ){
 			return call_user_func_array(array($this->_proxy_for, $name), $args);
 		}
 		throw new RuntimeException(get_class($this->_proxy_for).'::'.$name.'dose not exists');
+		 */
 	}
 }
 ?>
