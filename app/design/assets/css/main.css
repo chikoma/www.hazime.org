@@ -27,6 +27,7 @@ header {
 	z-index : -1;
 }
 header hgroup h1#logo {
+	display : none;
 	font-family : cinecaption;
 	color : #FFF;
 	text-shadow: -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000;
@@ -43,7 +44,7 @@ header hgroup {
 }
 header hgroup img#mascot {
 	position : absolute;
-	top : 30px;
+	top : 10px;
 	left : 20px;
 }
 /*
@@ -67,7 +68,7 @@ div#main {
 	position : relative;
 }
 div#main_wrapper {
-	padding-top : 110px;
+	padding-top : 90px;
 }
 
 /*
@@ -123,7 +124,7 @@ aside#adv {
  * ============================================== */
 div#eye_catch {
 	background : url(../img/common/header/bg_unryuu.png); 
-	height : 45px;
+	height : 150px;
 	width : 100%;
 	position : absolute;
 	z-index : -100;
