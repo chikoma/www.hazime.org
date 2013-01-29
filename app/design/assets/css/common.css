@@ -68,25 +68,17 @@ body
  * ヘッダー
  * ---------------------------------*/
 header {
-		width : 950px;
-		height : 70px;
+		width : 100%;
+		height : 350px;
 		background : #DDD;
-		moz-border-radius:0px 0px 10px 10px;
-		-webkit-border-radius:0px 0px 10px 10px;
-		border-radius:0px 0px 10px 10px;
+		moz-border-radius:10px;
+		-webkit-border-radius:10px;
+		border-radius:10px;
 		margin : auto;
 		margin-top : 0px;
-		border : solid  #344151;
-		border-width : 0px 2px 2px 2px;
-		position : relative;
-		background : url(../img/bg/white.png);
-
-}
-#headerbg{
-	width : 100%;
-	height : 300px;
-	position : absolute;
-	background : url(../img/common/header_bg.png);
+		border : solid 2px #344151;
+		position : abusolute;
+		background : url(../img/common/header_bg.png);
 }
 hgroup {
 	width : 950px;
