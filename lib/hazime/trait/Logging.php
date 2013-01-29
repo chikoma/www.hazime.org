@@ -5,6 +5,7 @@ trait Logging
 	public function setLogger(Hazime_Log $logger)
 	{
 		$this->_logger = $logger;
+		return $this;
 	}
 
 	protected function log($level, $msg)
