@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>{SUBTITLE} 松本ハジメと「かむながら」</title>
+		<title>:SUBTITLE:undefined 松本ハジメと「かむながら」</title>
 		<link rel="stylesheet" href="assets/css/default.css" />
 		<link rel="stylesheet" href="assets/css/common.css" />
 		<link rel="stylesheet" href="assets/css/profile.css" />
@@ -23,6 +23,16 @@
 				border : 1px dashed #222;
 				padding : 5px;
 			}
+nav#doc ul li {
+	dispaly : block;
+	padding : 10px 10px;
+	background : #FFF;
+	margin-bottom : 5px;
+}
+nav#doc ul li a {
+	width : 100%;
+}
+
 		</style>
 	</head>
 	<body class="layout3col">
@@ -37,7 +47,7 @@
 			<nav>
 			<ul>
 				<li><a href="./">トップ</a></li>
-				<li><a href="./profile.html">プロフィール</a></li>
+				<li><a href="./profile.php">プロフィール</a></li>
 				<li>開発日記</li>
 			</ul>
 			</nav>
@@ -108,7 +118,7 @@
 					<!-- END:INFILE parts/adv.html //-->
 <!-- END:BLOCK aside_adv //-->
 <!-- START:BLOCK aside //-->
-					<!-- START:INFILE parts/profile.html //-->
+					<!-- START:INFILE parts/profile.php //-->
 					<section class="avator"></section>
 					<section class="name">松本創（まつもと はじめ）</section>
 					<hr />
@@ -120,8 +130,16 @@
 					ように生きている。
 					</p>
 					<hr />
+					<nav id="doc">
+					<ul>
+						<li><a href="#">自己紹介</a></li>
+						<li><a href="#">不登校について</a></li>
+						<li><a href="#">仕事について</a></li>
+						<li><a href="#">「かむながら」について</a></li>
+					</ul>
+					</nav>
 					</article>
-					<!-- END:INFILE parts/profile.html //-->
+					<!-- END:INFILE parts/profile.php //-->
 <!-- END:BLOCK aside //-->
 				</div><!-- /col2 //-->
 			</div><!-- /col-box //-->
@@ -146,4 +164,5 @@
 		 <!-- /Google Analytics //-->
 	</body>
 </html>
+
 
