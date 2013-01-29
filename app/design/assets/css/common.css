@@ -1,181 +1,81 @@
-p.text {
-	font-size : 12px;
-	text-indent: 1em;
-	line-height : 1.5em;
-}
-/* ---------------------------------
- * WebFont
- * ---------------------------------*/
-@font-face 
-{
-		font-family:cinecaption;
-		src: local('cinecaption'), url(../fonts/cinecaption226.ttf) format('truetype');
-}
-/* ---------------------------------
- * 基本のデザイン
- * ---------------------------------*/
-body
-{
-		background-color : #333; 
-		color : #444;
-		font-family:cinecaption;
-		/* background-image : url('../img/common/mascot.png') */
-	background-image : url(../img/bg/kasuriblack.png);
-}
-/*--------------------------------------------------------------------
- * 基本的なデザイン
- * --------------------------------------------------------------------*/
-a,
-a:link {
-		color: #333333;
-		text-decoration: none;
-}
+/**
+ * Hazime, ORG用のCommonCSS
+ *
+ * assets/css/common.css
+ */
+@charset "UTF-8";
 
-a:visited {
-	color: #333333;
-	text-decoration: none;
-}
+/*
+ * リセット部分
+ * ============================================== */
 
-a:hover,
-a:active {
-	color: #777777;
-	text-decoration: none;
-}
-
-a:focus {
-	outline: none;
+/*
+ * HTML5に対応していないブラウザ用
+ * ---------------------------------------------- */
+article,aside,details,footer,header,hgroup,menu,nav,section,summary {
+		display: block;
 }
 
 /*
- * 背景作成
- * ---------------------------------*/
-body
-{
-		background-color : #333; 
-}
-/* ---------------------------------
- * ロゴデザイン
- * ---------------------------------*/
-#logo 
-{
-		font-family:"cinecaption";
-		font-size : 40px;
-		letter-spacing : 20px;
-		font-weight : bold;
-		text-shadow: -2px -2px #DDD, 2px -2px #DDD, -2px 2px #DDD, 2px 2px #DDD;
-}
-/* ---------------------------------
- * ヘッダー
- * ---------------------------------*/
-header {
-		width : 100%;
-		height : 350px;
-		position : absolute;
-		background : url(../img/common/header_washi.png);
-		top : 0px;
-}
-hgroup {
-	width : 950px;
-	margin : auto;
-	position : relative;
-}
-header h1 {
-	text-align : center;
-	padding-top : 32px;
-	padding-left : 31px;
-}
-#mascot {
-	position : absolute;
-	left : -10px;
-	top : 5px;
-}
-#mascot img{
+ * 余白系のリセット
+ * ---------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6,
+a, abbr, address, big, cite, code, em, font, img,
+small, strong, sub, sup, fieldset, form, label,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article,aside,details,footer,header,hgroup,menu,nav,section,summary,figure {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
 }
 
-/* ---------------------------------
- * コンテンツ表示域
- * ---------------------------------*/
+body {
+	line-height:1;
+}
 
-/* メイン角丸ボックス ---------------------------------*/
-#contents {
-	width : 950px;
-	moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border-radius:10px;
-	background : #DDD;
-	margin : auto;
-	margin-top : 100px;
-	border : solid 2px #344151;
-	position : relative;
-	background : url(../img/bg/white.png);
+ol, ul {
+	list-style:none;
+}
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+	overflow-y: scroll;
 }
 
 /*
- * Footer
- * ---------------------------------*/
-footer {
-	width : 850px;
-	moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border-radius:10px;
-	background : #EEE;
-	margin : auto;
-	margin-top :10px;
-	border : solid 2px #344151;
-	padding : 20px 50px;
-	text-align : center;
-	font-family : 'cinecaption';
-	/*background : #a3aaae;*/
-	background : #a3aaae;
-	background : url(../img/bg/white.png)
+ * clearfix対応
+ * ============================================== */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
 }
 
-/* ---------------------------------
- * 広告表示
- * ---------------------------------*/
-figure#adv {
-	width : 120px;
-	position : absolute;
-	top : 2px;
-	right : 2px;
-	padding : 0px;
-	margin : 0px;
-}
-figure#adv figcaption{
-	background : #DDD;
-	color : #000;
-	padding : 10px 0px;
-	text-align : center;
+.clearfix {
+	min-height: 1px;
 }
 
-
-/* ---------------------------------
- * カラム設定
- * ---------------------------------*/
-
-/* カラムルートボックス ------------------------------ */
-#col-box {
-	width : 810px;
-	padding-top : 20px;
-	padding-bottom : 50px;
-}
-#col1{
-	float : right;
-	margin-right : 10px;
-	width : 550px;
-}
-#col2{
-	float : left;
-	margin-left : 20px;
-	width : 210px;
-}
-/* ---------------------------------
- * プロフィール
- * ---------------------------------*/
-.avator
-{
-	background: url(../img/common/self_image.jpg) no-repeat;
-	background-size : 100%;
-	height : 150px;
+* html .clearfix {
+	height: 1px;
+	/*\*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
 }
 
+/*
+ * リセット部分
+ * ============================================== */

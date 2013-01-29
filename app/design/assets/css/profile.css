@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/**
+ * プロフィール用のCSS
+ */
+
+/*
+<div id="sideber">
+<article id="profile">
+<figure><img src="assets/img/profile/hajime.jpg" alt="松本創の写真(昔)" /></figure>
+<h1 id="name">松本 創</h1>
+<section id="introduction">
+<p>
+1983年生まれ、経営者/役者/物書き/プログラマ/SEなどと、 肩書きが多岐に渡り定まらないが、全ては関係する一連の ながれで、強いて肩書きを言えば名前こそが肩書きになる ように生きている。
+</p>
+</introduction>
+*/
+
+#sideber #profile {
+
+}
+#sideber #profile figure{
+}
+#sideber #profile figure img{
+	width : 220px;
+}
+
+#sideber #profile h1 {
+	font-family : cinecaption;
+	text-align : center;
+	margin : 10px;
+}
+
+#sideber #profile p {
+	text-indent : 1em;
+}
+#sideber #profile section {
+	border-top : 1px solid silver;
+	border-bottom : 1px solid silver;
+	padding : 10px;
+	font-family : cinecaption;
+	font-size : 80%;
+	line-height : 1.5em;
+	letter-spacing : 2px;
+}

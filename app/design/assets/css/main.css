@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/*
+ * 共通部分
+ * ============================================== */
+body {
+		background : url(../img/common/bg/kasuri.png);
+		color : #555;
+}
+
+/* 
+ * WebFont
+ * ---------------------------------*/
+@font-face
+{
+		font-family:cinecaption;
+		src: local('cinecaption'), url(../fonts/cinecaption226.ttf) format('truetype');
+}
+
+/*
+ * ヘッダー部分
+ * ============================================== */
+header {
+/*	background : url(../img/common/header/bg_unryuu.png); */
+	height : 300px;
+	width : 100%;
+	position : absolute;
+	z-index : -1;
+}
+header hgroup h1#logo {
+	font-family : cinecaption;
+	color : #FFF;
+	text-shadow: -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000;
+	font-size : 40px;
+	margin : auto;
+	text-align : center;
+	letter-spacing : 10px;
+}
+header hgroup {
+	padding-top : 50px;
+	width : 950px;
+	position : relative;
+	margin : auto;
+}
+header hgroup img#mascot {
+	position : absolute;
+	top : 30px;
+	left : 20px;
+}
+/*
+ * メインとフッターのベース
+ * ============================================== */
+div#main,footer{
+	width : 950px;
+	margin : auto;
+	background : url(../img/common/bg/tasuki_ni_sakura.png);
+	moz-border-radius:10px; /* Firefox */
+	-webkit-border-radius:10px; /* chrome */
+	border-radius:10px; /* IE */
+}
+
+/*
+ * メイン領域
+ * ============================================== */
+
+div#main {
+	height : 800px;
+	position : relative;
+}
+div#main_wrapper {
+	padding-top : 110px;
+}
+
+/*
+ * フッター領域
+ * ============================================== */
+div#footer{
+	padding-bottom :100px;
+}
+footer {
+	text-align : center;
+	margin-top : 10px;
+}
+footer small {
+	display : block;
+	padding-top : 30px;
+	padding-bottom : 30px;
+}
+
+
+/*
+ * コンテンツカラム
+ * ============================================== */
+div#contents_wrapper {
+	padding-top : 20px;
+	float : right;
+	margin-right : 150px;
+}
+div#contents {
+	background : red;
+	width : 550px;
+}
+div#sideber_wapper {
+	padding-left : 20px;
+	padding-top : 20px;
+}
+div#sideber {
+	width : 220px;
+}
+
+/*
+ * 広告領域
+ * ============================================== */
+aside#adv {
+	position : absolute;
+	right : 10px;
+	top : 5px;
+	width : 120px;
+}
+
+
+/*
+ * その他
+ * ============================================== */
+div#eye_catch {
+	background : url(../img/common/header/bg_unryuu.png); 
+	height : 45px;
+	width : 100%;
+	position : absolute;
+	z-index : -100;
+	top : 150px;
+
+}
