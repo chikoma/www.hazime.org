@@ -62,7 +62,7 @@ body
 		font-size : 40px;
 		letter-spacing : 20px;
 		font-weight : bold;
-		text-shadow: -1px -1px #DDD, 1px -1px #DDD, -1px 1px #DDD, 1px 1px #DDD;
+		text-shadow: -2px -2px #DDD, 2px -2px #DDD, -2px 2px #DDD, 2px 2px #DDD;
 }
 /* ---------------------------------
  * ヘッダー
@@ -70,15 +70,9 @@ body
 header {
 		width : 100%;
 		height : 350px;
-		background : #DDD;
-		moz-border-radius:10px;
-		-webkit-border-radius:10px;
-		border-radius:10px;
-		margin : auto;
-		margin-top : 0px;
-		border : solid 2px #344151;
-		position : abusolute;
+		position : absolute;
 		background : url(../img/common/header_bg.png);
+		top : 0px;
 }
 hgroup {
 	width : 950px;
@@ -87,26 +81,15 @@ hgroup {
 }
 header h1 {
 	text-align : center;
-	padding-top : 15px;
+	padding-top : 32px;
 	padding-left : 31px;
 }
 #mascot {
 	position : absolute;
 	left : -35px;
-	top : 10px;
+	top : 0px;
 }
 #mascot img{
-}
-
-/* ---------------------------------
- *コンテンツ表示域
- * ---------------------------------*/
-#menu {
-	width : 910px;
-	height : 60px;
-	margin : 0px auto 0px auto;
-	border : 0px ;
-	position : relative;
 }
 
 /* ---------------------------------
@@ -116,14 +99,13 @@ header h1 {
 /* メイン角丸ボックス ---------------------------------*/
 #contents {
 	width : 950px;
-	moz-border-radius:10px 10px 0px 0px;
-	-webkit-border-radius:10px 10px 0px 0px;
-	border-radius:10px 10px 0px 0px;
+	moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
 	background : #DDD;
 	margin : auto;
-	margin-top : 0px;
-	border : solid #344151;
-	border-width : 2px 2px 0px 2px;
+	margin-top : 100px;
+	border : solid 2px #344151;
 	position : relative;
 	background : url(../img/bg/white.png);
 }
@@ -133,15 +115,16 @@ header h1 {
  * ---------------------------------*/
 footer {
 	width : 850px;
+	moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
 	background : #EEE;
 	margin : auto;
-	border : solid #344151;
-	border-width : 0px 2px 0px 2px;
+	margin-top :10px;
+	border : solid 2px #344151;
 	padding : 20px 50px;
 	text-align : center;
 	font-family : 'cinecaption';
-	margin-top : 0px;
-	margin-bottom : 0px;
 	/*background : #a3aaae;*/
 	background : #a3aaae;
 	background : url(../img/bg/white.png)
