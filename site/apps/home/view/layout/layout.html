@@ -47,7 +47,8 @@
 					<nav class="side">
 						<ul>
 							<!-- [BLOCK:NAVI] -->
-							<li><a href="#">お知らせ</a></li>
+							<li><?php echo $view->front()->link('トップ', 'index'); ?></li>
+							<li><?php echo $view->front()->link('お知らせ', 'notice','home'); ?></li>
 							<li><a href="#">仕事のはなし</a></li>
 							<li><a href="#">芸能のはなし</a></li>
 							<li><a href="#">不登校について</a></li>

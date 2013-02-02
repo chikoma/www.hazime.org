@@ -8,6 +8,7 @@ class View extends Hazime_View
 
 	public function call( $caller )
 	{
+		$this->getHelperBroker()->set('front', $caller);
 		$this->_caller = $caller;
 		return $this;
 	}
@@ -24,6 +25,7 @@ class View extends Hazime_View
 		).'/view';
 
 		$this->setViewDir( $view_dir );
+
 
 		parent::display( $view_script );
 	}

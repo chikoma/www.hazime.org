@@ -14,6 +14,12 @@ class Front
 	private $_modules;
 	private $_bootstrap;
 
+	// For Helper
+	public function call( )
+	{
+		return $this;
+	}
+
 	public function __construct( \Bootstrap\Bootstrap $bootstrap )
 	{
 		$this->_bootstrap = $bootstrap;
@@ -59,11 +65,9 @@ class Front
 		$this->request->setVars($_POST)->setVars($_GET);
 
 		// アクションを実行してレスポンスを取得
-		$res = $this->action('index');
+		$res = $this->action( $_GET['a'],$_GET['c'],$_GET['m']);
 
 		// レスポンスから画面を表示
-		//$this->view($res);
-
 		$this->view()->display( $res );
 	}
 
@@ -72,26 +76,12 @@ class Front
 	 */
 	public function action( $act_name, $ctrl_name = 'index', $mod_name = self::DEFAULT_MODULE )
 	{
+		if(empty($act_name)) $act_name = 'index';
+		if(empty($ctrl_name)) $ctrl_name = 'index';
+		if(empty($mod_name)) $mod_name = self::DEFAULT_MODULE;
 		$this->debug('m:%s c:%s a:%s', $mod_name,$ctrl_name,$act_name);
 		$c = $this->getController( $ctrl_name, $mod_name );
 		return $c->dispatch($act_name);
 	}
-
-	/**
-	 * Rendering
-	public function view( $resp )
-	{
-		$view_script = sprintf('%s/view/script/%s/%s.html',
-			$this->getModuleDir($resp->info->module_name),
-			$resp->info->controller_name,
-			$resp->info->action_name
-		);
-		if(file_exists($view_script))
-		{
-			echo $resp->info->status;
-			echo file_get_contents($view_script);
-		}
-	}
-	 */
 }
 ?>

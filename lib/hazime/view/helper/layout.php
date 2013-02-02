@@ -11,6 +11,8 @@ class Layout extends View
 	{
 		$this->_view = $view;
 
+		$this->setHelperBroker($this->_view->getHelperBroker());
+
 		if( $name !== null )
 		{
 			$this->_name = $name;
