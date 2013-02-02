@@ -1,33 +1,16 @@
 <?php
-// site/lib/header.php
-// =========================
-// 基本的なヘッダー
-// =========================
-//
-//
-// =========================
-$dir = realpath(dirname(__FILE__)."/../../"); // uper app dir 
+use Hazime\Hazime;
+use Hazime\Core\Registry;
 
-//
-// Require Hazime Root Class
-// =========================
-require_once $dir.'/lib/hazime/class/Hazime.php';
-$hazime = Hazime::getInstance( );
+ini_set('display_errors','on');
+require_once dirname(__FILE__) . '/../../lib/hazime/hazime.php';
 
-//
-// Set UP Logger
-// =======================
-$hazime->setLogger(new Hazime_Log());
+// Start
+Hazime::getInstance( )->register( );
 
-//
-// Set Develop Mode
-// =======================
-$hazime->developMode();
+// Set Site Root
+Registry::set('site_root', realpath(dirname(__FILE__).'/..'));
 
-//
-// Set UP Boot Strap
-// =======================
-require_once dirname(__FILE__).'/../Bootstrap.php';
-$bs = new App_Bootstrap( );
-$bs->addResourceDir(HAZIME_LIB.'/resource','Hazime_Resource');
+// Load Bootstrap
+require_once dirname(__FILE__) . '/bootstrap.php';
 ?>

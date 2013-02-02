@@ -64,7 +64,7 @@ div#main,footer{
  * ============================================== */
 
 div#main {
-	/* height : 800px; */
+	height : 800px;
 	position : relative;
 }
 div#main_wrapper {
