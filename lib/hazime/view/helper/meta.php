@@ -31,6 +31,12 @@ class Meta
 		return $this;
 	}
 
+	public function add($arr)
+	{
+		$this->_metas[] = $arr;
+		return $this;
+	}
+
 	public function call( )
 	{
 		return $this;
