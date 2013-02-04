@@ -10,6 +10,7 @@ class Controller
 		// Helper Brokerを引き渡す
 		$this->setHelperBroker( $app->getHelperBroker() );
 
+		// Initialize
 		$this->init();
 	}
 
