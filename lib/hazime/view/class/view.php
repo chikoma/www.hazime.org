@@ -61,8 +61,7 @@ class View
 
 	public function renderer( $file )
 	{
-		self::$view  = $this;
-		$view  = $this;
+		self::$view = $view = $this;
 		eval('?><?php namespace Hazime\\View;?>'.trim(file_get_contents($file)));
 	}
 }

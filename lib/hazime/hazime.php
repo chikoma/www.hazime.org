@@ -21,11 +21,11 @@ class Hazime
 		spl_autoload_register(array($this,'classLoad'));
 	}
 
-
 	/**
 	 * Class Auto Loading
 	 *
 	 * Namespace: Aaa\Bbb\Ccc
+	 * Find in : Aaa/Bbb/Ccc/
 	 * Find in : Aaa/Bbb/Ccc/class/
 	 * Find in : Aaa/Bbb/Ccc/trait/
 	 * Find in : Aaa/Bbb/Ccc/absolute/
@@ -35,15 +35,18 @@ class Hazime
 	{
 		$name = str_replace(__NAMESPACE__,"",$name);
 		$path = str_replace('\\','/',$name);
-		$path = $this->_root_dir.'/'.strtolower($path).'.php';
+		$path = strtolower(dirname($path)).'/'.lcfirst(basename($path));
+		$path = $this->_root_dir.'/'.$path.'.php';
 
-		foreach( array('class','trait','absolute','interface') as $type)
+		foreach( array('','/class','/trait','/absolute','/interface','/exception') as $type)
 		{
-			$file = dirname($path).'/'.$type.'/'.basename($path);
+			$file = dirname($path). $type.'/'.basename($path);
 			if(file_exists($file)){
 				require_once $file;
 				return true;
 			}
+			// For Debug
+			// var_dump($file);
 		}
 	}
 }

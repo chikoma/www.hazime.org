@@ -1,12 +1,12 @@
-<?php echo $view->doctype(); ?>
-<?php echo $view->html(); ?>
+<?=$view->doctype();?>
+<?=$view->html();?>
 <head>
-	<?php echo $view->keywords( )->append('松本創,松本ハジメ,不登校,登校拒否'); ?>
-	<?php echo $view->title()->append('松本ハジメと「かむながら」'); ?>
-	<?php echo $view->description('松本ハジメと「かむながら」'); ?>
-	<?php echo $view->meta( ); ?>
-	<?php echo $view->ie( ); ?>
-	<?php echo $view->style( )->prepend('assets/css/main.css')->prepend('assets/css/common.css');?>
+	<?=$view->keywords( )->append('松本創,松本ハジメ,不登校,登校拒否'); ?>
+	<?=$view->title()->append('松本ハジメと「かむながら」'); ?>
+	<?=$view->description('松本ハジメと「かむながら」'); ?>
+	<?=$view->meta( );?>
+	<?=$view->ie( );?>
+	<?=$view->style( )->prepend('assets/css/main.css')->prepend('assets/css/common.css');?>
 </head>
 <body>
 	<header id="root">
@@ -22,7 +22,7 @@
 		<div id="main" class="clearfix">
 			<div id="contents_wrapper">
 				<section id="contents">
-					<?php place('contents'); ?>
+					<?=place( )->contents; ?>
 				</section><!-- /contents //-->
 
 			</div><!-- /contents_wrapper //-->

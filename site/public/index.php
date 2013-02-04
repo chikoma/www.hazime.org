@@ -4,6 +4,9 @@ use Hazime\Core\Registry;
 
 include_once dirname(__FILE__).'/../lib/header.php';
 
+
+
+/*
 $logger = Logger::getLogger('file','/tmp/hazime.log','w')->register();
 
 
@@ -15,6 +18,7 @@ $bs->front
 			'module_dir'=> Registry::get('site_root').'/apps/home'
 		)
 	)->run( );
+ */
 
 ?>
 

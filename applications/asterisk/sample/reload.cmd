@@ -1,0 +1,1 @@
+Url :  /asterisk/ami/reload

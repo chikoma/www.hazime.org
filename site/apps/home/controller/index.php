@@ -1,8 +1,6 @@
 <?php
 namespace App\Home;
 use Hazime\Framework\Controller;
-use Hazime\Framework\Response;
-use Hazime\Framework\Request;
 
 class IndexController extends Controller
 {
