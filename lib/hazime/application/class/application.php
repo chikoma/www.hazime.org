@@ -29,10 +29,7 @@ class Application
 	{
 		$file = $this->loadFile( 'controller', "$name.php");
 		$class = $this->config()->general->namespace . '\\Controller\\'.ucfirst($name);
-		$ctrl = new $class( );
-
-		// Helper Brokerを引き渡す
-		$ctrl->setHelperBroker( $this->getHelperBroker() );
+		$ctrl = new $class( $this );
 
 		return $ctrl;
 	}

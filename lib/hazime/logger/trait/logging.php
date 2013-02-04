@@ -7,8 +7,14 @@ trait Logging
 
 	public function setLogger( Logger $logger )
 	{
-		$this->_logger = $logger;
+		if($logger){
+			$this->_logger = $logger;
+		}
 		return $this;
+	}
+	public function getLogger( )
+	{
+		return $this->_logger;
 	}
 
 	private function _makeMsg( $msgs )
@@ -54,6 +60,13 @@ trait Logging
 		if(!$this->_logger) return false;
 		$msg = $this->_makeMsg(func_get_args());
 		$this->_logger->log(Logger::ERROR, $msg);
+	}
+
+	public function verbose( )
+	{
+		if($this->_logger){
+			$this->setLogger(new Logger());
+		}
 	}
 }
 ?>

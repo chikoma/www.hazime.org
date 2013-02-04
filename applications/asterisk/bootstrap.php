@@ -6,13 +6,10 @@ class Bootstrap extends \Hazime\Application\Bootstrap
 {
 	public function initAMI( )
 	{
-		$ams = new \Hazime\Asterisk\Manager();
-		$ams->setLogger(new Logger());
 		$srv = $this->config->server;
-		$ams->connect($srv->host,$srv->port,$srv->username,$srv->secret);
+		$ams = new \Hazime\Asterisk\Manager($srv->host,$srv->port,$srv->username,$srv->secret);
+		$ams->setLogger(new Logger());
 		return $ams;
 	}
-
-
 }
 ?>

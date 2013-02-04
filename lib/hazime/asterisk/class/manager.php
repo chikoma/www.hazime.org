@@ -1,75 +1,80 @@
 <?php
 namespace Hazime\Asterisk;
 use Hazime\Logger\Logging;
+use Hazime\Socket\Socket;
 
-class Manager
+class Manager 
 {
 	use Logging;
-	private $_socket;
+	private $_host,$_port,$_user,$_secret;
+	private $_socket = false;
 
-	public function connect( $host, $port, $user, $secret )
+	public function __construct( $host = 'localhost', $port = '5038', $user = 'admin', $secret = 'hogehoge' )
 	{
-		$errno = 0;
-		$errstr = '';
-		$this->_socket = fsockopen( $host,$port,$errno,$errstr,20);
-
-		if( !$this->_socket )
-		{
-			throw new ManagerException('Can not connect asterisk server');
-			return false;
-		}
-		// Get Header Infomation;
-		$this->info('connected');
-		// Get Server Response
-		$this->readLine();
-		// Login
-		$this->command('Login',array('Username'=>$user,'Secret'=>$secret,'Events'=>'Off'));
-		return true;
+		$this->_host = $host;
+		$this->_port = $port;
+		$this->_user = $user;
+		$this->_secret = $secret;
 	}
 
-	public function readLine( )
+	public function connect( )
 	{
-		$line = fgets($this->_socket);
-		$this->debug( 'Res:'.$line );
-		return $line;
+		$this->_socket = new Socket($this->_host,$this->_port);
+		$this->_socket->setLogger($this->getLogger());
+		$this->_socket->connect();
+	}
+	public function disconnect( )
+	{
+		$this->_socket->disconnect();
 	}
 
-	public function writeLine( $text = null )
+	public function sendCommand( $name, $params = array() )
 	{
-		if(func_num_args() > 1 )
-		{
-			return $this->writeLine(vsprintf($text,array_slice(func_get_args(),1)));
-		}
-		$this->debug( 'Sent: %s', trim($text)."\r\n");
-		fputs( $this->_socket, trim($text)."\r\n");
-	}
-
-	public function command( $name, $params = array() )
-	{
-		$this->writeLine('Action: %s',$name);
+		$this->_socket->writeLine('Action: %s',$name);
 		foreach( $params as $k=>$v)
 		{
-			$this->writeLine('%s: %s', $k,$v);
+			$this->_socket->writeLine('%s: %s', $k,$v);
 		}
-		$this->writeLine();
-
-		return $this->getResponse();
+		$this->_socket->writeLine();
 	}
 
-	public function getResponse( )
+	public function login( )
 	{
-		$res = array();
-		do{
-			$line = $this->readLine();
-			$list = explode(':',$line,2);
-			$res[trim($list[0])] = trim(@$list[1]);
-		}while( '' !== trim($line) );
-		return $res;
+		$this->sendCommand('Login',array('Username'=>$this->_user, 'Secret'=>$this->_secret,'Events'=>'off'));
+
+		/* Token 解析するなら
+		while( $line = $this->_socket->readLine() )
+		{
+			$token = strtok($line,':');
+			if($token == 'Message'){
+				break;
+			}
+		}
+		*/
 	}
 
-	public function __distruct( )
+	public function logoff( )
 	{
-		fclose($this->_socket);
+		$this->sendCommand('Logoff');
+		/* Token 解析するなら
+		while( $line = $this->_socket->readLine() )
+		{
+			if(trim($line) == 'Response: Goodbye'){
+				$this->_socket->readline();
+				$this->_socket->readline();
+			}
+		}
+		*/
+	}
+
+	public function command( $name, $params = array())
+	{
+		$this->connect( );
+		$this->login();
+		$this->sendCommand($name,$params);
+		$this->logoff();
+		$resp = $this->_socket->getResponse();
+		$this->disconnect();
 	}
 }
 ?>

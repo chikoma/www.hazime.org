@@ -4,24 +4,32 @@ use Hazime\Application\Controller;
 
 class AMI extends Controller
 {
+	private $ams;
+
+	public function init( )
+	{
+		$this->ams = $this->bootstrap()->AMI;
+	}
+
 	public function executeAction( )
 	{
-		$ams = $this->bootstrap()->AMI;
-		$ams->command( 'Reload' );
+		$this->ams->command( 'Reload' );
+	}
+
+	public function commandAction( )
+	{
+		$this->ams->command( $this->request()->command );
 	}
 
 	public function reloadAction( )
 	{
-		$ams = $this->bootstrap()->AMI;
-		$ams->command( 'Reload' );
+		$this->ams->command( 'Reload' );
 	}
 
 	public function callAction( )
 	{
 		$req = $this->request( );
-		$ams = $this->bootstrap()->AMI;
-
-		$ams->command('Originate',array(
+		$this->ams->command('Originate',array(
 			'Channel'=>$req->channel('SIP/201'),
 			'Callerid'=>$req->callerid('Hazime <201>'),
 			'Context'=>$req->context('201-out'),
