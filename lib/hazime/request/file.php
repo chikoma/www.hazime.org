@@ -15,10 +15,10 @@ class File extends Request
 		$headers = array();
 		while($line = fgets($fp, 1024))
 		{
-			if(preg_match('/^([^:]+):(.*)/',$line,$m)){
-				$key = strtolower(trim($m[1]));
-				$line = $m[2];
-				$headers[$key] = ltrim($line);
+			if( $token = strtok(trim($line),':') )
+			{
+				$key = trim($token);
+				$headers[strtolower($key)] = ltrim(strtok(':'));
 			}elseif(!empty($key)){
 				$headers[$key] .= ltrim($line);
 			}
