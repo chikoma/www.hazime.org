@@ -27,9 +27,11 @@ class Command extends Front
 		$action     = $parts[3];
 
 		// アプリケーションをロードする
-		$app = $this->app($app_name);;
+		$app = $this->app($app_name);
+
 		// リクエストをカスケード
 		$app->request( $req );
+
 		// アクションのディスパッチ
 		$app->action( $action, $controller);
 	}

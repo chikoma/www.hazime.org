@@ -18,7 +18,10 @@ class AMI extends Controller
 
 	public function commandAction( )
 	{
-		$this->ams->command( $this->request()->command );
+		$this->ams->command( 
+			$this->request()->command, 
+			$this->request()->params
+		);
 	}
 
 	public function reloadAction( )

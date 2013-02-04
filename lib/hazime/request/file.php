@@ -17,7 +17,7 @@ class File extends Request
 		{
 			if( $token = strtok(trim($line),':') )
 			{
-				$key = trim($token);
+				$key = strtolower(trim($token));
 				$headers[strtolower($key)] = ltrim(strtok(':'));
 			}elseif(!empty($key)){
 				$headers[$key] .= ltrim($line);

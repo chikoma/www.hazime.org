@@ -41,30 +41,11 @@ class Manager
 	public function login( )
 	{
 		$this->sendCommand('Login',array('Username'=>$this->_user, 'Secret'=>$this->_secret,'Events'=>'off'));
-
-		/* Token 解析するなら
-		while( $line = $this->_socket->readLine() )
-		{
-			$token = strtok($line,':');
-			if($token == 'Message'){
-				break;
-			}
-		}
-		*/
 	}
 
 	public function logoff( )
 	{
 		$this->sendCommand('Logoff');
-		/* Token 解析するなら
-		while( $line = $this->_socket->readLine() )
-		{
-			if(trim($line) == 'Response: Goodbye'){
-				$this->_socket->readline();
-				$this->_socket->readline();
-			}
-		}
-		*/
 	}
 
 	public function command( $name, $params = array())
