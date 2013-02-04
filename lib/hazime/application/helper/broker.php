@@ -1,5 +1,6 @@
 <?php
 namespace Hazime\Application\Helper;
+use Exception;
 
 class Broker
 {

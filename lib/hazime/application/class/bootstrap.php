@@ -11,6 +11,7 @@ class Bootstrap extends Hazime_Bootstrap
 		$broker = new Helper\Broker( );
 		$broker->set('request', 'Hazime\\Application\\Helper\\Request');
 		$broker->set('bootstrap', 'Hazime\\Application\\Helper\\Bootstrap');
+		$broker->set('view', 'Hazime\\Application\\Helper\\View');
 		$broker->call('bootstrap',array($this ));
 		return $broker;
 	}

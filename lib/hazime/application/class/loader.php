@@ -31,6 +31,8 @@ class Loader
 			require_once $file;
 			$class = $ns.'\\'.'Bootstrap';
 			$bootstrap = new $class( );
+		}else{
+			$bootstrap = new Bootstrap();
 		}
 		$bootstrap->initResource('config', $config);
 		$bootstrap->initResource('app', new Application( $bootstrap ));
